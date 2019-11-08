@@ -9,10 +9,10 @@ import { map } from 'rxjs/operators';
 export class ProductService {
   private _albumUrl = '../assets/album.json';
   constructor(private _http: Http) { }
-  
+
   getAlbum(id: number) {
     // tslint:disable-next-line
     
-   return this._http.get(this._albumUrl).pipe(map((response) => response.json()));
+   return this._http.get(this._albumUrl).map((response) => response.json());
   }
 }
